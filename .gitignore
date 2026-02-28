@@ -1,0 +1,43 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Virtual Environments
+venv/
+env/
+.env
+
+# Large ML Models and Data Artifacts
+backend/models/*.pkl
+backend/models/*.joblib
+!backend/models/.gitkeep
+
+# Local datasets
+# agriculture_dataset.csv
+# crop_yield.csv
+# farm_resource_dataset.csv
+
+# FastAPI / Uvicorn
+.pytest_cache/
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+.hypothesis/
+.run/
+.idea/
+.vscode/
