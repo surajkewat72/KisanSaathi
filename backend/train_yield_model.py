@@ -116,11 +116,11 @@ def train():
     print(f"\nTrain samples : {len(X_train)}")
     print(f"Test  samples : {len(X_test)}")
 
-    # 6. Train RandomForestRegressor
+    # 6. Train RandomForestRegressor (reduced for memory)
     print("\n[Training RandomForestRegressor …]")
     model = RandomForestRegressor(
-        n_estimators=100,
-        max_depth=10,
+        n_estimators=20,
+        max_depth=12,
         random_state=42,
         n_jobs=-1
     )
