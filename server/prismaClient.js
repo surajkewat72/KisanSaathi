@@ -1,15 +1,14 @@
 require('dotenv').config();
-const { Pool } = require('pg');
-const { PrismaPg } = require('@prisma/adapter-pg');
 const { PrismaClient } = require('@prisma/client');
 
-// Create a PostgreSQL connection pool
-const connectionString = process.env.DATABASE_URL;
+// Create Prisma Client with standard connection
+const prisma = new PrismaClient({
+  log: process.env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
+});
 
-const pool = new Pool({ connectionString });
-const adapter = new PrismaPg(pool);
-
-// Create Prisma Client with the adapter
-const prisma = new PrismaClient({ adapter });
+// Graceful shutdown
+process.on('beforeExit', async () => {
+  await prisma.$disconnect();
+});
 
 module.exports = prisma;
