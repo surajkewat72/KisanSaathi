@@ -2,6 +2,32 @@
 
 FastAPI-based machine learning service for crop prediction, yield forecasting, and farm optimization.
 
+## ⚠️ IMPORTANT: Render Deployment Fix
+
+**This configuration is optimized for Render deployment with Python 3.11.9**
+
+### Why These Changes Matter:
+
+1. **Build Tools First**: `setuptools`, `wheel`, and `pip` are at the TOP of requirements.txt
+   - Render now uses Python 3.14 by default
+   - ML packages (pandas, scikit-learn, numpy) need these build tools
+   - Without them → pip cannot build packages → deploy crashes
+
+2. **Python 3.11.9**: Specified in `runtime.txt`
+   - Many ML libraries still break on Python 3.13+
+   - 3.11.9 is stable and compatible with all dependencies
+
+### If Deployment Fails:
+
+**In Render Dashboard:**
+1. Go to Service → Settings
+2. Click **Clear build cache**
+3. Click **Manual Deploy** → **Deploy latest commit**
+
+This clears any cached Python 3.14 builds.
+
+---
+
 ## 📋 Dependencies
 
 All dependencies are listed in `requirements.txt`. **CRITICAL**: Make sure `PuLP` is installed for Linear Programming optimization.

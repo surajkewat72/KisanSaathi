@@ -9,7 +9,7 @@ services:
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT --workers 2
     envVars:
       - key: PYTHON_VERSION
-        value: 3.11.7
+        value: 3.11.9
       - key: ALLOWED_ORIGINS
         value: "*"
       - key: ENVIRONMENT

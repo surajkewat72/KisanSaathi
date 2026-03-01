@@ -1,4 +1,11 @@
 # ============================================
+# Build Tools (MUST BE FIRST for Render/Python 3.14)
+# ============================================
+setuptools>=65.5.1
+wheel>=0.38.4
+pip>=23.0
+
+# ============================================
 # KisanSaathi Backend Requirements
 # Python ML Service Dependencies
 # ============================================
