@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // ── Axios Instance ─────────────────────────────────────────────────────────────
 const api = axios.create({
-    baseURL: 'http://127.0.0.1:8000',
+    baseURL: process.env.REACT_APP_FASTAPI_URL || 'http://127.0.0.1:8000',
     headers: { 'Content-Type': 'application/json' },
     timeout: 30000, // 30 s — model inference can be slow
 });

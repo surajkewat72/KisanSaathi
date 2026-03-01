@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model FarmPlan {
+  id               String   @id @default(uuid())
+  farmerName       String?
+  totalArea        Float
+  recommendations  Json
+  allocation       Json
+  totalProfit      Float
+  sustainability   Float
+  riskLevel        String
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@map("farm_plans_test")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

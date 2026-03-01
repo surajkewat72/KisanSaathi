@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+import os
 
 # Input Validation Schema
 class FarmInput(BaseModel):
@@ -21,10 +22,13 @@ app = FastAPI(
     version="1.0.0"
 )
 
+# Configure CORS for production
+allowed_origins = os.getenv("ALLOWED_ORIGINS", "*").split(",")
+
 # Enable CORS for frontend integration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Adjust this for production
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

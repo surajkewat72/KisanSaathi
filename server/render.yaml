@@ -1,0 +1,26 @@
+services:
+  # Node.js Backend Service
+  - type: web
+    name: kisansaathi-backend
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install && npx prisma generate
+    startCommand: node index.js
+    envVars:
+      - key: DATABASE_URL
+        sync: false  # You'll add this manually in Render dashboard
+      - key: FASTAPI_URL
+        sync: false  # Add your FastAPI URL here
+      - key: NODE_ENV
+        value: production
+      - key: FRONTEND_URL
+        sync: false  # Add your Vercel URL here
+
+  # PostgreSQL Database (optional - can use Render's built-in PostgreSQL)
+  # - type: postgres
+  #   name: kisansaathi-db
+  #   region: oregon
+  #   plan: free
+  #   databaseName: kisansaathi
+  #   databaseUser: kisansaathi_user
