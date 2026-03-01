@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sprout, TrendingUp, ShieldCheck, ShieldAlert, ShieldX } from 'lucide-react';
+import { Sprout, ShieldCheck, ShieldAlert, ShieldX } from 'lucide-react';
 
 // ── Risk config ────────────────────────────────────────────────────────────────
 const RISK_CONFIG = {

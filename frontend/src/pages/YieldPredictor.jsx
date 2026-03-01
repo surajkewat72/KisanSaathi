@@ -12,7 +12,6 @@ const SOIL_TYPES = ['Loamy', 'Sandy', 'Clay', 'Silty', 'Peaty'];
 const IRRIGATION_TYPES = ['Drip', 'Sprinkler', 'Flood', 'Rainfed'];
 const SEASONS = ['Kharif', 'Rabi', 'Summer'];
 const CROPS = ['Rice', 'Wheat', 'Tomato', 'Maize', 'Potato'];
-const CROP_ICONS = { Rice: '🌾', Wheat: '🌾', Tomato: '🍅', Maize: '🌽', Potato: '🥔' };
 
 const INITIAL = {
     Temperature_C: 23, Rainfall_mm: 850, Soil_pH: 6.5,
